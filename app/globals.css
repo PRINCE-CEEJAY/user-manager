@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
   --background: rgb(47, 6, 47);
@@ -7,7 +7,7 @@
 
 @layer base {
   body {
-    @apply md:bg-[url('/background.jpg')] bg-(var(--background))  bg-center bg-cover bg-no-repeat text-(--foreground) p-4 flex flex-col justify-center items-center min-h-screen;
+    @apply md:bg-[url('/background.jpg')] bg-(--background)  bg-center bg-cover bg-no-repeat text-(--foreground) p-4 flex flex-col justify-center items-center min-h-screen;
   }
 }
 
