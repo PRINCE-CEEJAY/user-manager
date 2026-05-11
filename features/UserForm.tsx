@@ -49,48 +49,51 @@ export default function UserForm() {
   }, [isSubmitSuccessful, reset]);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="container">
-      <h1 className="fancy-text">Create User below</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-        <div className="flex flex-col">
-          <label htmlFor="name">Name:</label>
-          <input id="name" type="text" {...register("name")} />
-          {errors.name && <p className="error">{errors.name.message}</p>}
-        </div>
+    <div>
+      <form onSubmit={handleSubmit(onSubmit)} className="container">
+        <h1 className="fancy-text">Create User below</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <div className="flex flex-col">
+            <label htmlFor="name">Name:</label>
+            <input id="name" type="text" {...register("name")} />
+            {errors.name && <p className="error">{errors.name.message}</p>}
+          </div>
 
-        <div className="flex flex-col">
-          <label htmlFor="email">Email:</label>
-          <input id="email" type="email" {...register("email")} />
-          {errors.email && <p className="error">{errors.email.message}</p>}
-        </div>
-        <div className="flex flex-col">
-          <label htmlFor="password">Password:</label>
-          <input id="password" type="password" {...register("password")} />
-          {errors.password && (
-            <p className="error"> {errors.password.message}</p>
-          )}
-        </div>
+          <div className="flex flex-col">
+            <label htmlFor="email">Email:</label>
+            <input id="email" type="email" {...register("email")} />
+            {errors.email && <p className="error">{errors.email.message}</p>}
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="password">Password:</label>
+            <input id="password" type="password" {...register("password")} />
+            {errors.password && (
+              <p className="error"> {errors.password.message}</p>
+            )}
+          </div>
 
-        <div className="flex flex-col">
-          <label htmlFor="role">Role:</label>
-          <input id="role" type="text" {...register("role")} />
-          {errors.role && <p className="error">{errors.role.message}</p>}
-        </div>
+          <div className="flex flex-col">
+            <label htmlFor="role">Role:</label>
+            <input id="role" type="text" {...register("role")} />
+            {errors.role && <p className="error">{errors.role.message}</p>}
+          </div>
 
-        <div className="flex flex-col">
-          <label htmlFor="bio">Bio:</label>
-          <textarea {...register("bio")}></textarea>
-          {errors.bio && <p className="error">{errors.bio.message}</p>}
-        </div>
+          <div className="flex flex-col">
+            <label htmlFor="bio">Bio:</label>
+            <textarea {...register("bio")}></textarea>
+            {errors.bio && <p className="error">{errors.bio.message}</p>}
+          </div>
 
-        <div className="flex flex-col">
-          <label htmlFor="salary">Salary:</label>
-          <input id="salary" type="text" {...register("salary")} />
-          {errors.salary && <p className="error">{errors.salary.message}</p>}
+          <div className="flex flex-col">
+            <label htmlFor="salary">Salary:</label>
+            <input id="salary" type="text" {...register("salary")} />
+            {errors.salary && <p className="error">{errors.salary.message}</p>}
+          </div>
         </div>
-      </div>
-      <button>Submit</button>
-      <DevTool control={control} />
-    </form>
+        <button>Submit</button>
+      </form>
+
+      {/* <DevTool control={control} /> */}
+    </div>
   );
 }
