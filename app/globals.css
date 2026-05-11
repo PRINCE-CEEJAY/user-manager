@@ -1,24 +1,25 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
+  --background: rgb(47, 6, 47);
   --foreground: #171717;
 }
 
 @layer base {
   body {
-    @apply bg-(--background) text-(--foreground);
+    @apply bg-[url('/background.jpg')]  bg-center bg-cover bg-no-repeat text-(--foreground) p-4 flex flex-col justify-center items-center min-h-screen;
   }
 }
 
 @layer components {
   .container {
-    @apply flex flex-col gap-2 justify-center items-center p-4 rounded-md backdrop-blur-xl shadow-xl bg-white/30 text-black font-bold;
+    @apply flex flex-col gap-2 justify-center items-center p-4 rounded-md backdrop-blur-xl shadow-xl bg-white/30 text-black font-bold hover:scale-102 transition-all duration-300 ease-in-out;
   }
   button {
     @apply px-4 py-1 min-w-12 rounded-md font-bold bg-green-500 hover:bg-green-700 cursor-pointer;
   }
-  input {
+  input,
+  textarea {
     @apply border-2 p-2 rounded-md font-bold focus:ring-2;
   }
 
